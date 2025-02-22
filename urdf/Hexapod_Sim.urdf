@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Hexapod_Sim">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00931125484451498 0.000284453934088408 0.0313981729948706"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507739390277625" />
+      <inertia
+        ixx="7.77002218705502E-06"
+        ixy="-2.00048031390656E-21"
+        ixz="-1.84032245097359E-07"
+        iyy="1.29174138021076E-05"
+        iyz="-7.2617021787437E-21"
+        izz="8.47814575855253E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="coxa">
+    <inertial>
+      <origin
+        xyz="-0.038885 -3.6701E-05 0.030217"
+        rpy="0 0 0" />
+      <mass
+        value="0.070996" />
+      <inertia
+        ixx="2.5181E-05"
+        ixy="-5.5281E-08"
+        ixz="-5.7851E-07"
+        iyy="2.4895E-05"
+        iyz="2.1926E-07"
+        izz="1.3275E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/coxa.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/coxa.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="coxa_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="coxa" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="femur">
+    <inertial>
+      <origin
+        xyz="-0.080738 -0.0016916 0.043153"
+        rpy="0 0 0" />
+      <mass
+        value="0.02565" />
+      <inertia
+        ixx="5.238E-06"
+        ixy="-3.0886E-08"
+        ixz="1.7758E-06"
+        iyy="1.5098E-05"
+        iyz="1.1122E-07"
+        izz="1.1043E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="femur_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coxa" />
+    <child
+      link="femur" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="tibia">
+    <inertial>
+      <origin
+        xyz="-0.1201 -0.00067472 0.023309"
+        rpy="0 0 0" />
+      <mass
+        value="0.077277" />
+      <inertia
+        ixx="9.9576E-06"
+        ixy="-1.0504E-06"
+        ixz="3.8415E-08"
+        iyy="2.7837E-05"
+        iyz="-3.4084E-08"
+        izz="3.1757E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/tibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod_Sim/meshes/tibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tibia_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="femur" />
+    <child
+      link="tibia" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
